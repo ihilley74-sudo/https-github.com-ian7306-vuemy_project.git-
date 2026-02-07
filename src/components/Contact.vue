@@ -143,11 +143,48 @@ export default {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.submit-btn:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .submit-btn:hover {
   background: #764ba2;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  animation: pulse 0.6s ease;
+}
+
+.submit-btn:active {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translateY(-3px) scale(1.05);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.08);
+  }
 }
 
 @media (min-width: 768px) {

@@ -58,8 +58,28 @@ export default {
   border-radius: 5px;
   font-size: 1rem;
   font-weight: 600;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .btn-primary {
@@ -68,9 +88,15 @@ export default {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   text-decoration: none;
+  animation: pulse 0.6s ease;
+}
+
+.btn-primary:active {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 
 .btn-secondary {
@@ -79,10 +105,22 @@ export default {
   border: 2px solid white;
 }
 
+.btn-secondary::before {
+  background: rgba(255, 255, 255, 0.15);
+}
+
 .btn-secondary:hover {
   background: white;
   color: #667eea;
   text-decoration: none;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255,255,255,0.3);
+  animation: pulse 0.6s ease;
+}
+
+.btn-secondary:active {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 3px 10px rgba(255,255,255,0.2);
 }
 
 @keyframes fadeInUp {
@@ -93,6 +131,15 @@ export default {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translateY(-3px) scale(1.05);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.08);
   }
 }
 
