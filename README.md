@@ -33,7 +33,7 @@ A modern, responsive portfolio website built with Vue.js 3 and Vite.
 1. Clone the repository
 ```bash
 git clone <repository-url>
-cd https-github.com-ian7306-vuemy_project.git-
+cd <repository-directory>
 ```
 
 2. Install dependencies
