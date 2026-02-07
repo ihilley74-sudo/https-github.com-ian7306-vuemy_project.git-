@@ -10,6 +10,12 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <a href="https://github.com/ihilley74-sudo/https-github.com-ian7306-vuemy_project.git-" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="fork-button">
+        Fork on GitHub
+      </a>
     </nav>
   </header>
 </template>
@@ -59,6 +65,24 @@ nav {
 .nav-links a:hover {
   color: #4a90e2;
   text-decoration: none;
+}
+
+.fork-button {
+  background: #4a90e2;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid #4a90e2;
+}
+
+.fork-button:hover {
+  background: #357abd;
+  border-color: #357abd;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 @media (max-width: 768px) {
